@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Quiz do Sistema Urinário — Início{% endblock %}
+
+{% block content %}
+<div class="cartao cartao-central">
+  <p class="subtitulo">Antes de começar, digite seu nome:</p>
+  <form method="POST" action="{{ url_for('nome') }}">
+    <input
+      type="text"
+      name="nome"
+      placeholder="Digite seu nome"
+      class="campo-texto"
+      autofocus
+      required
+    >
+    {% if erro %}
+      <p class="mensagem-erro">{{ erro }}</p>
+    {% endif %}
+    <button type="submit" class="botao botao-principal">Continuar</button>
+  </form>
+</div>
+{% endblock %}

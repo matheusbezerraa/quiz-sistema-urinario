@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Escolha sua faixa etária{% endblock %}
+
+{% block content %}
+<div class="cartao cartao-central">
+  <p class="subtitulo">Olá, <strong>{{ nome }}</strong>! Escolha sua faixa etária:</p>
+  <form method="POST" action="{{ url_for('faixa') }}" class="opcoes-faixa">
+    {% for chave, quiz in quizzes.items() %}
+      <button type="submit" name="faixa" value="{{ chave }}" class="cartao-faixa faixa-{{ quiz.cor }}">
+        <span class="emoji-faixa">{{ quiz.emoji }}</span>
+        <span class="titulo-faixa">{{ quiz.titulo }}</span>
+        <span class="label-faixa">{{ quiz.faixa_label }}</span>
+      </button>
+    {% endfor %}
+  </form>
+</div>
+{% endblock %}

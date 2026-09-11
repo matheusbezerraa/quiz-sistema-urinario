@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Resultado — Quiz{% endblock %}
+
+{% block content %}
+<div class="cartao cartao-central">
+  <div class="cabecalho-quiz faixa-{{ quiz.cor }}">
+    <span class="emoji-faixa">{{ quiz.emoji }}</span>
+    <div>
+      <h2>{{ quiz.titulo }} — {{ quiz.faixa_label }}</h2>
+    </div>
+  </div>
+
+  <p class="subtitulo">Parabéns pela participação, <strong>{{ nome }}</strong>!</p>
+  <p class="pontuacao">Você acertou <strong>{{ acertos }}</strong> de <strong>{{ total }}</strong> perguntas.</p>
+
+  {% if ganhou %}
+    <p class="resultado resultado-ganhou">🎁 Parabéns! Você ganhou a lembrancinha!</p>
+  {% else %}
+    <p class="resultado resultado-nao-ganhou">Quase lá! Dessa vez você não atingiu os 6 acertos necessários, mas continue estudando sobre o sistema urinário. 💪</p>
+  {% endif %}
+
+  <a href="{{ url_for('reiniciar') }}" class="botao botao-secundario">Reiniciar</a>
+</div>
+{% endblock %}

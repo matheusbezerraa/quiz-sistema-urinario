@@ -1,0 +1,262 @@
+:root {
+  --cor-fundo: #f0f7f9;
+  --cor-texto: #1f2937;
+  --cor-primaria: #0d9488;
+  --cor-primaria-escura: #0f766e;
+  --cor-cartao: #ffffff;
+  --cor-borda: #e2e8f0;
+  --cor-erro: #dc2626;
+
+  --verde: #22c55e;
+  --verde-fundo: #f0fdf4;
+  --amarelo: #eab308;
+  --amarelo-fundo: #fefce8;
+  --vermelho: #ef4444;
+  --vermelho-fundo: #fef2f2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+.pagina {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 16px 48px;
+}
+
+.cabecalho h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--cor-primaria-escura);
+  margin-bottom: 24px;
+}
+
+.conteudo {
+  width: 100%;
+  max-width: 640px;
+  display: flex;
+  justify-content: center;
+}
+
+.cartao {
+  background: var(--cor-cartao);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+  width: 100%;
+}
+
+.cartao-central {
+  text-align: center;
+}
+
+.subtitulo {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.campo-texto {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 1rem;
+  border: 2px solid var(--cor-borda);
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.campo-texto:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+}
+
+.botao {
+  display: inline-block;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.botao:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.15);
+}
+
+.botao-principal {
+  background: var(--cor-primaria);
+  color: #fff;
+  width: 100%;
+}
+
+.botao-principal:hover {
+  background: var(--cor-primaria-escura);
+}
+
+.botao-secundario {
+  background: var(--cor-borda);
+  color: var(--cor-texto);
+  margin-top: 12px;
+}
+
+.mensagem-erro {
+  color: var(--cor-erro);
+  font-size: 0.9rem;
+  margin: -8px 0 16px;
+}
+
+.opcoes-faixa {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cartao-faixa {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 14px;
+  border: 2px solid var(--cor-borda);
+  background: #fff;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.cartao-faixa:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.12);
+}
+
+.faixa-verde {
+  border-color: var(--verde);
+  background: var(--verde-fundo);
+}
+
+.faixa-amarelo {
+  border-color: var(--amarelo);
+  background: var(--amarelo-fundo);
+}
+
+.faixa-vermelho {
+  border-color: var(--vermelho);
+  background: var(--vermelho-fundo);
+}
+
+.emoji-faixa {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.titulo-faixa {
+  display: block;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.label-faixa {
+  display: block;
+  color: #475569;
+  font-size: 0.9rem;
+}
+
+.cabecalho-quiz {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  border: 2px solid var(--cor-borda);
+}
+
+.cabecalho-quiz h2 {
+  margin: 0 0 4px;
+  font-size: 1.15rem;
+}
+
+.regra {
+  background: #fff7ed;
+  border: 1px solid #fdba74;
+  color: #9a3412;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.pergunta {
+  border: none;
+  border-top: 1px solid var(--cor-borda);
+  padding: 16px 0;
+  margin: 0;
+}
+
+.pergunta legend {
+  font-weight: 600;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.opcao {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 6px;
+  border: 1px solid transparent;
+}
+
+.opcao:hover {
+  background: #f8fafc;
+}
+
+.opcao.selecionada {
+  background: #ecfdf5;
+  border-color: var(--cor-primaria);
+}
+
+.opcao input {
+  margin-top: 3px;
+}
+
+.pontuacao {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.resultado {
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.resultado-ganhou {
+  background: var(--verde-fundo);
+  color: #15803d;
+  border: 2px solid var(--verde);
+}
+
+.resultado-nao-ganhou {
+  background: var(--vermelho-fundo);
+  color: #b91c1c;
+  border: 2px solid var(--vermelho);
+}
